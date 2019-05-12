@@ -14,6 +14,17 @@ and number of years.
 ## Installation
 
 Run `npm install react-compound-interest` or `yarn install react-compound-interest`.
+Next,
+
+```
+import CompoundInterest from 'react-compound-interest';
+```
+
+Finally,
+
+```
+<CompoundInterest title="Compound Interest Calculator" />
+```
 
 ## Usage
 
@@ -33,4 +44,3 @@ be calculated and displayed automatically.
 [The MIT License](https://opensource.org/licenses/MIT)
 
 Copyright (c) 2019 [Ruslan Bredikhin](https://ruslanbredikhin.com/)
-
