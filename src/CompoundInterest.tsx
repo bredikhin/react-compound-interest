@@ -16,14 +16,6 @@ import {
   CompoundEvent
 } from '../index';
 
-const defaults: CompoundInterestInputData = {
-  principal: 1000,
-  interest: 12,
-  annualAddition: 100,
-  timesPerYear: 1,
-  numberOfYears: 10
-};
-
 export const compound = ({
   principal,
   interest,
@@ -89,15 +81,15 @@ const CompoundInterest = ({ title, classes }: CompoundInterestStyledProps) => {
 
   return (
     <Grid container direction="column" className={classes.root}>
-      <Grid item className={classes.field}>
-        {title && (
+      {title && (
+        <Grid item className={classes.field}>
           <header>
             <Typography variant="subtitle1" className={classes.header}>
               {title}
             </Typography>
           </header>
-        )}
-      </Grid>
+        </Grid>
+      )}
       <Grid item className={classes.field}>
         <TextField
           label="Principal"
