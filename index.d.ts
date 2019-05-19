@@ -10,7 +10,10 @@ export interface CompoundInterestInputData {
 }
 
 export interface CompoundInterestStyledProps {
-  title: string,
+  title?: string,
+  options?: {
+    withAnnualAddition: boolean,
+  }
   classes: {
     root: string,
     header: string,

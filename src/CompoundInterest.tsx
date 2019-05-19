@@ -55,11 +55,20 @@ const styles = (theme: Theme) =>
     }
   });
 
-const CompoundInterest = ({ title, classes }: CompoundInterestStyledProps) => {
+const CompoundInterest = ({
+  title,
+  options = {
+    withAnnualAddition: true
+  },
+  classes
+}: CompoundInterestStyledProps) => {
+  const { withAnnualAddition } = options;
   const { useState, useEffect, useMemo } = React;
   const [principal, setPrincipal] = useState('');
   const [interest, setInterest] = useState('');
-  const [annualAddition, setAnnualAddition] = useState('');
+  const [annualAddition, setAnnualAddition] = withAnnualAddition
+    ? useState('')
+    : ['0', () => null];
   const [timesPerYear, setTimesPerYear] = useState('');
   const [numberOfYears, setNumberOfYears] = useState('');
   const [futureAmount, setFutureAmount] = useState('');
@@ -68,7 +77,7 @@ const CompoundInterest = ({ title, classes }: CompoundInterestStyledProps) => {
       compound({
         principal: parseFloat(principal),
         interest: parseFloat(interest),
-        annualAddition: parseFloat(annualAddition),
+        annualAddition: parseFloat(annualAddition) || 0,
         timesPerYear: parseInt(timesPerYear),
         numberOfYears: parseInt(numberOfYears)
       }).toString() || '',
@@ -113,20 +122,24 @@ const CompoundInterest = ({ title, classes }: CompoundInterestStyledProps) => {
           onChange={(e: CompoundEvent) => setInterest(e.currentTarget.value)}
         />
       </Grid>
-      <Grid item className={classes.field}>
-        <TextField
-          label="Annual addition"
-          id="annual-addition"
-          className={classes.field}
-          InputProps={{
-            startAdornment: <InputAdornment position="start">$</InputAdornment>
-          }}
-          value={annualAddition}
-          onChange={(e: CompoundEvent) =>
-            setAnnualAddition(e.currentTarget.value)
-          }
-        />
-      </Grid>
+      {withAnnualAddition && (
+        <Grid item className={classes.field}>
+          <TextField
+            label="Annual addition"
+            id="annual-addition"
+            className={classes.field}
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">$</InputAdornment>
+              )
+            }}
+            value={annualAddition}
+            onChange={(e: CompoundEvent) =>
+              setAnnualAddition(e.currentTarget.value)
+            }
+          />
+        </Grid>
+      )}
       <Grid item className={classes.field}>
         <TextField
           label="Times  per year"
