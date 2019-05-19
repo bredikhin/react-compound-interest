@@ -1,6 +1,6 @@
 {
   "name": "react-compound-interest",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Compound interest calculator component made with React.js",
   "main": "./lib/index.js",
   "repository": "https://github.com/bredikhin/react-compound-interest",

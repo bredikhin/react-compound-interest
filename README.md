@@ -11,9 +11,13 @@ and number of years.
 * written in TypeScript,
 * uses Material UI.
 
-## Installation
+## Usage
+
+### Install
 
 Run `npm install react-compound-interest` or `yarn install react-compound-interest`.
+
+### Add to your code
 Next,
 
 ```
@@ -26,7 +30,15 @@ Finally,
 <CompoundInterest title="Compound Interest Calculator" />
 ```
 
-## Usage
+### Props
+
+Current version supports following props:
+
+* `title`: text to be displayed in the header,
+* `options`: component options, namely
+    - `withAnnualAddition`: whether or not you need a field for annual addition (`true` by default).
+
+### UI
 
 Enter your principal, interest, annual addition, compounding frequency and
 number of years you expect your investment to grow. The future value will
