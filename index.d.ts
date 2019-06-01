@@ -13,13 +13,9 @@ export interface CompoundInterestStyledProps {
   title?: string,
   options?: {
     withAnnualAddition: boolean,
-  }
-  classes: {
-    root: string,
-    header: string,
-    field: string,
-    result: string
-  }
+  },
+  width?: number,
+  height?: number
 }
 
 export interface CompoundInterestProps {

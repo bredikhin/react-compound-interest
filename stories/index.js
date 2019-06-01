@@ -14,4 +14,10 @@ storiesOf('CompoundInterest', module)
       title="Basic Compound Interest Calculator"
       options={{withAnnualAddition: false}}
     />
+  ))
+  .add('with width and height set', () => (
+    <CompoundInterest
+      width={300}
+      height={600}
+    />
   ));
