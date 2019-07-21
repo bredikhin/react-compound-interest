@@ -20,10 +20,11 @@ export const compound = ({
   numberOfYears
 }: CompoundInterestInputData): number => {
   const k = 1 + interest / 100 / timesPerYear;
+  const l = numberOfYears * timesPerYear;
 
   return (
-    principal * Math.pow(k, numberOfYears) +
-    (annualAddition * (Math.pow(k, numberOfYears + 1) - k)) / (k - 1)
+    principal * Math.pow(k, l) +
+    (((annualAddition * (Math.pow(k, l) - 1)) / (k - 1)) * k) / timesPerYear
   );
 };
 
