@@ -1,5 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Compound Interest Calculator should render without annual addition 1`] = `ShallowWrapper {}`;
-
-exports[`Compound Interest Calculator should render without props 1`] = `ShallowWrapper {}`;
