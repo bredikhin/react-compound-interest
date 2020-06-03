@@ -1,10 +1,10 @@
 {
-  "name": "react-native-web-compound-interest",
-  "version": "1.0.0",
+  "name": "react-compound-interest",
+  "version": "2.0.0",
   "description": "Compound interest calculator component made with React Native Web",
   "author": "bredikhin",
   "license": "MIT",
-  "repository": "bredikhin/react-native-web-compound-interest",
+  "repository": "bredikhin/react-compound-interest",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.tsx",
